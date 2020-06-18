@@ -1,0 +1,44 @@
+\chapter{Appendix C}
+\label{app:app03}
+
+\initial{B}ecause our aim was to study the spatial effects, it was a prerequisite to find the analytic expression that can be used to fit numeric results. The MATLAB toolbox app used to model our work was specifically built to compute 2D differential equation problems, however it can also be adjusted to solve the 1D and 3D problems. The 2D analytic solution is not soo trivial problem and to get the physical meaning of our study it was not a neccessity to present the exact solution in 2D. Instead we needed to transform our solution into polar coordinate system in order to model the radial decay which rather best give the physical meaning of spatial modeling. 
+
+\section{Solution in polar coordinate form}
+The Laplacian in equation \ref{eqtn5}
+can be  transformed into polar coordinate system as;
+\begin{equation}\label{eqtnp1}  
+\frac{1}{r}\frac{\partial(D r\frac{\partial n(r)}{\partial r})}{\partial r} + \frac{1}{r^2}\frac{\partial(D\frac{\partial n(r)}{\partial \theta})}{\partial \theta}  -  \frac{n(r)}{\tau} + G_0(r) = 0
+\end{equation}
+Since the problem is axis-symmetric; then $\frac{\partial n(r)}{\partial \theta} = 0$ equation \ref{eqtnp1} becomes;
+\begin{equation} \label{eqtnp2}
+\frac{\partial(Dr\frac{\partial n(r)}{\partial r})}{\partial r} -  r\frac{n(r)}{\tau} + G_0(r) = 0
+\end{equation}
+which can be written as 
+\begin{equation} \label{eqtnp3}
+\frac{\partial ^2 n}{\partial r^2} +\frac{1}{r}\frac{\partial n}{\partial r} -  \frac{n(r)}{\tau D} + \frac{G_0(r)}{D} = 0
+\end{equation}
+
+Particular solution, i e 
+\begin{equation} \label{eqtnp4}
+\frac{\partial ^2 n}{\partial r^2} +\frac{1}{r}\frac{\partial n}{\partial r} -  \frac{n(r)}{\tau D} = 0
+\end{equation}
+For the above expression to be satisfied, at-least two of the three terms must balance each other in order of magnitude with the term left out having smaller or equal order of magnitude but not greater. 
+If we consider the first and second terms, it means 
+\begin{equation}\label{eqtnp5}
+\frac{\partial n}{\partial r} \approx \frac{1}{r}  \Rightarrow  n(r) \approx \ln(r)
+\end{equation}
+which is big compared to the first and second term.
+
+Now taking the second and third terms
+\begin{equation}\label{eqtnp8}
+n(r) \approx C_1 \exp(\frac{r^2}{2 \tau D})
+\end{equation}
+This also outweighs the other two terms; Now the only left trial is balancing the third and first terms. This gives;
+\begin{equation} \label{eqtnp9}
+n(r) \approx C_1 \exp(\frac{-r}{\sqrt{\tau D}}) 
+\end{equation}
+This makes the second term insignificant and drop out. Hence the only feasible leading behavior of eqtn (\ref{eqtnp4}) and since $\sqrt{\tau D} = L_n$ is; 
+\begin{equation} \label{eqtnp10}
+n(r) \approx C_1 \exp({\frac{- r}{L_n}}) 
+\end{equation}
+Here $C_1$ is an integration constant, r is the radial distance and $L_n$ is minority carrier diffusion length.
