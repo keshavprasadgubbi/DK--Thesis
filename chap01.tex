@@ -324,15 +324,128 @@ CPM is used to construct a model of the project that includes -
 
 
 
-CPM calculates :
+
+
+CPM Approach: (cite)
+
 \begin{itemize}
-	\item The longest path of the planned activities to the end of the project.
-	\item The earliest and latest that each activity can begin and end without making the project longer.
+	\item CPM calculates :
+	\begin{itemize}
+		\item The longest path of the planned activities to the end of the project.
+		\item The earliest and latest that each activity can begin and end without making the project longer.
+	\end{itemize}
+		\item Determine the critical activities "the longest path".
+		\item Prioritize the activities for the effective management and to shorten the planned critical of the project by -
+		\begin{itemize}
+			\item Pruning the critical activities 
+				\item Fast tracking i.e performing more activities in parallel 
+			\item Crashing the critical path by shortening the durations of the critical path activities by adding resources. 
+		\end{itemize}
 \end{itemize}
 
 
-Determine the critical activities “the longest path “
-Prioritize the activities for the effective management and to shorten the planned critical of the project by 
-Pruning the critical activities 
-Fast tracking i.e performing more activities in parallel 
-Crashing the critical path by shortening the durations of the critical path activities by adding resources. 
+
+\subsubsection{Steps in Critical Path Method }
+
+\begin{figure}
+	\centering
+	\includegraphics[height=0.23\textheight]{fig01/Clean-Energy}
+	\mycaption[CPM]{CPM steps}
+\end{figure}
+
+A critical path method include the following methods:
+
+\begin{enumerate}
+	\item \textbf{Identify activities:} By using the WBS, utilize the list if activities and identify them by name and a code, all activities must have a defined duration and end date.
+		\item \textbf{Determine the sequence of the activities:} It is the most important step as it provides a clear view of the relationship between the activities and helps to establish the dependencies as some activities occurrence will depend on the completion of others.
+			\item \textbf{Creating a network of activities:} After determining the interdependency amongst the activities, a network diagram is created, a critical path analysis chart; it allows you to use arrows to connect to the activities based on the dependency.
+			
+				\item \textbf{Determine the completion time for each activity:}  By estimating the time taken to complete each activity will help to determine the total time needed to complete the project.
+					\item \textbf{Finding the critical path:} A network of activities will help to create the longest sequence "the critical path" using these parameters 
+					
+\end{enumerate}
+
+\textbf{ES Early Start:} the earliest time to start a certain activity provided that the preceding one is completed \\
+\textbf{EF Early Finish:} the earliest time required to the finish the activity  \\
+\textbf{LF Late Finish :} the latest time required to finish the project without delays \\
+\textbf{LS Late Start:} the latest start date when project can start without project delays. \\
+
+
+\begin{figure}
+	\centering
+	\includegraphics[height=0.23\textheight]{fig01/Clean-Energy}
+	\mycaption[CPM]{CPM works}
+\end{figure}
+
+
+If there is a delay in any task on the critical path, the entire project will be delayed. The critical path is the path where can be no delays. Not all of the project activities are equally important, while some of them have a huge impact on the critical path. The critical path method helps to determine which activities are “critical and which have “total float”. However, if any of the floating activities get seriously delayed, they become critical, and hence delays the entire project.
+
+How resource limitations effect the CPM?
+
+There are always certain limitations that affect our projects and create new dependencies. For example, resource limitations. In such scenario, the critical path changes into "critical resource path" where resources related to each activity become important part of the process.
+
+As some of the tasks will have to be performed in a different order, which may cause delays and consequently, make the projects becomes longer than estimated.
+
+
+Benefits of CPM are:
+Although new techniques have been there in fast-paced technological advances, CPM still offers a number of advantages.
+Prioritized tasks 
+\begin{enumerate}
+	\item Clarity on project’s timeline for modifications 
+	\item Risk assessment becomes easy 
+	\item Redistribution of resources is efficient 
+	\item Helps project panning team to stay focused
+
+\end{enumerate}
+
+Hence, CPM allows tom reschedule less important tasks and focus all efforts on critical path to optimize work thereby avoiding delays.
+
+\subsection{Probabilistic   Methodology - Program Evaluation and Review Technique (PERT)}
+
+The Program Evaluation and Review Technique PERT, is a probabilistic methodology in project planning that helps to analyze, represent, and evaluate and estimate the time required to complete the project within defined time duration. PERT allows project planners to identify start and end dates, and ultimately contributes to reducing time and cost required to complete the project.
+
+PERT was developed in 1958 by the US Navy as a part of the Polaris project. Their aim was to manage the Polaris submarine missile program. CPM was also developed around the same time.
+
+Unlike CPM, which determines the longest path needed to finish the project, PERT provides three different time estimates. While PERT deals with unpredictable activities, but CPM deals with predictable activities. Hence, PERT deals with non-repetitive activities and CPM involves activities of repetitive nature. Owing to these differences, PERT is widely used in research and development projects and CPM heavily used in construction projects.
+
+Steps in PERT:
+
+\begin{enumerate}
+	\item Identify specific activities and milestones: By listing out all the activities within a table, to get a clear overview of all the steps which can subsequently expand by adding information on sequence and time necessary to complete each activity.
+	
+	\item Determining the sequence of the activities: It is easy to predict order for some activities while others might need in-depth analysis to determine their order.
+	\item Develop a network diagram: Once the sequence of the activities is defined, activities can be represented both series and parallel activities in the diagram.
+	\item Each activity should represent a node in the network, and arrows are used to show relationships between the activities.
+	\item Estimating the time required for each activity: What distinguishes PERT from the other techniques of project planning is its ability to deal with uncertainty in activity completion time. There are 3 time estimates PERT uses for each activity:
+	\begin{itemize}
+		\item \textbf{Optimistic time:} the shortest time in which activity can complete 
+		\item \textbf{Most likely time:}the completion time that has highest probability 
+		\item \textbf{Pessimistic  time:} the longest time in which the activity can complete 
+	\end{itemize}
+Once these 3 time estimates are identified, expected time is calculated for each activity by using the following weighted average as:\\
+\\
+$Expected time = \dfrac{(Optimistic + (4* Most likely) + Pessimistic)}{6} $
+		\item \textbf{Identifying the critical path:}  By adding the times for the activities and determining the longest path, we can calculate the critical path. The critical path involves the total amount of time required for the project completion. The total project time is independent of the change in activities outside critical path.
+		
+\end{enumerate}
+
+
+\subsubsection{Benefits of PERT:}
+
+At its core, PERT helps to control complex and ambitious projects whose objectives are highly critical in nature. It helps to determine the fastest route possible to complete the projects.
+
+\subsubsection{PERT provides a number of advantages: }
+In-depth analysis of the project activities by viewing the activities both independently and in connection with each other. This provides clarity on time and budget required to complete the entire project.
+What-if analysis helps to identify all the possibilities and uncertainties related to the project. By trying different combinations and choosing the most useful possibility, we can eliminate risks. It also highlights the activities that require careful monitoring.
+
+
+\subsubsection{The disadvantages associated with PERT are:}
+
+Even though PERT has proven to be an effective methodology for reducing the expected project completion time, there are still some limitations associated with it.
+Although PERT clearly defines all the activities on a project, it is sometime impossible to predict every step. As changes takes place within the project, it can seriously affect the initial PERT. While it is possible to make modifications but it leads to opportunity cost in terms of time.
+Project planning managers make time estimates and as they heavily depend on the estimates based on the experience of the project managers.
+
+Overall, PERT allows to have an idea of possible time variation and helps to assess the importance of the uncertainties along the entire project duration. Unlike most methodologies, PERT provides the flexibility to identify the best-case and the worst-case scenarios and to develop a strategy on how to best coordinate large-scale projects. 
+
+
+
