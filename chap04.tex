@@ -1,0 +1,139 @@
+\let\textcircled=\pgftextcircled
+\chapter{Research Methodology}
+\label{chap:RM}
+
+We denote a generic variable "v" and calculate its likelihood $p(t)$ called Probability. These quantities can be extended to calculation of time and cost estimations for execution of the project. 
+
+\subsection{A: Likelihood to Probability}
+For a, b being the range of the activity duration, such that $v < a$ and $v > b$,
+
+\begin{equation}
+	p(v)  = 0 
+\end{equation}
+
+and for  a $\leqslant$ v $\leqslant$ b,
+
+\begin{equation}
+\sum_{v} p(v) = 1
+\end{equation}
+
+
+\subsection{B: Triangular Distribution}
+
+3 points, minimum, most likely and maximum.
+
+To calculate the probability associated to each variable 
+
+
+\subsection{C: Area under Triangle}
+
+The area under the triangle must be equal to 1, as the time taken to complete the task between $ v_{min} $ and $ v_{max} $ and hence 
+
+\begin{equation}
+\frac{1}{2} * base * altitude = \frac{1}{2} * (v_{max} - v_{min} ) * p(v_{ml}) = 1
+\label{eqn3}
+\end{equation}
+
+where $p(v_{ml} $ is the probability of the variable ml.
+
+Furthermore,
+
+
+\begin{equation}
+p(v_{ml}) = \frac{2}{  (v_{max} - v_{min})} 
+\label{eqn4}
+\end{equation}
+
+To derive probability for any quantity (v) lying between $ v_{min} $ and $ v_{ml} $ 
+
+\begin{equation}
+\frac{(v - v_{min})}{ p(t) }  = \frac{(v_{ml} - v_{min})}{ p(ml) } 
+\label{eqn5}
+\end{equation}
+
+Consequence of ratios on either side of \ref{eqn5} is equal to slope of line joining points $(v_{min}, 0)$ and $( v_{ml}, p(ml) )$
+
+
+\subsection{D: }
+Substituting \ref{eqn3} in \ref{eqn4} and simplifying,
+
+\begin{equation}
+p(t)  = \frac{2* (v - v_{min})}{ (v_{ml} - v_{min}) (v_{max} - v_{min}) } 
+\label{eqn6}
+\end{equation}
+
+for $ v_{min} \leqslant v \leqslant v_{ml}$.
+
+Similarly, probability for time between $(v_{ml}$ and $ v_{max})$,
+
+\begin{equation}
+p(t)  = \frac{2* (v_{min} - v)}{ (v_{max} - v_{ml}) (v_{max} - v_{min}) } 
+\label{eqn7}
+\end{equation}
+
+for $ v_{ml} \leqslant v \leqslant v_{max}$.
+
+Equations \ref{eqn6} and \ref{eqn7} provides Probability distribution Functions (PDF) for times existing between $v_{min}$ and $v_{max}$. 
+
+
+In Monte Carlo simulations, the PDF's are not used rather Cumulative Distribution Functions (CDF) is used, with probability (p(t)) that is computed as a function of time (t).
+
+To reiterate, the PDF quantifies the completion probability $p(t)_{PDF}$ of a task at time (t), whereas $p(t)_{CDF}$ indicates the probability of task completion by time (t).
+
+The CDF and $p(t)_{CDF}$ is essentially sum of all probabilities between $v_{min}$ and $v$. 
+
+
+For $ v < v_{min}$, area under triangle with vertices at $(v_{min}, 0)$, $(v, 0)$ and $(v, v(t))$ indicates probability.
+
+Using triangle formula and Equation \ref{eqn6}, 
+
+\begin{equation}
+p(t)  = \frac{2* (v - v_{min})^{2}}{ (v_{ml} - v_{min}) (v_{max} - v_{min}) } 
+\label{eqn8}
+\end{equation}
+
+for $ v_{min} \leqslant v \leqslant v_{ml}$.
+
+For the case of $ v \geqslant v_{ml}$, the area under curve equals the total area subtracted by the area enclosed by triangle between $v$ and $v_{max}$,
+
+\begin{equation}
+p(t)  = 1 -  \frac{(v_{max} - v)^{2}}{ (v_{ml} - v_{min}) (v_{max} - v_{min}) } 
+\label{eqn9}
+\end{equation}
+
+For $ v_{ml} \leqslant v \leqslant v_{max}$, $p(t)$ ranges between 0 and $v_{min}$ and increases monotonically, attaining a value of 1 at $v_{max}$. 
+
+Put the ranges and $ a = v_{min}, b = v_{ml}, c = v_{max}$, the resulting PDF and CDF would be 
+
+
+
+
+
+To simulate using Monte Carlo generate a random number between 0 and 1, it corresponds to the probability that the task will finish until time (t).
+
+Find the time t, which corresponds to value of probability, this is the completion time for this Simulation Iteration. Incidentally, this method is called Increase Transform Sampling. 
+
+Solving equations \ref{eqn8} and  \ref{eqn9} yields the following expression for time (t):
+
+ \begin{equation}
+ v = v_{min} + \sqrt{ p(v) (v_{ml} - v_{min}) * (v_{max} - v_{min})}
+ \label{eqn10}
+ \end{equation}
+ 
+for $ v_{min} \leqslant v \leqslant v_{ml}$ and 
+
+ \begin{equation}
+v = v_{max} - \sqrt{1 - (p(v) (v_{max} - v_{ml}) * (v_{max} - v_{min}))}
+\label{eqn10}
+\end{equation}
+
+for $ v_{ml} \leqslant v \leqslant v_{max}$. 
+
+The probability for $v_{min}$ is 0 and for $v_{max}$ is 1. 
+
+The $P(v_{ml})$ can be calculated by using equation \ref{eqn8} wherein $v = v_{max}$ reduces the probability to 
+
+\begin{equation}
+p(v)_{ml}  = \frac{(v_{ml} - v_{min})}{  (v_{max} - v_{min}) } 
+\label{eqn11}
+\end{equation}
