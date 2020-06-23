@@ -2,9 +2,59 @@
 \chapter{Research Methodology}
 \label{chap:RM}
 
-We denote a generic variable "v" and calculate its likelihood $p(t)$ called Probability. These quantities can be extended to calculation of time and cost estimations for execution of the project. 
+\section{Monte-Carlo Simulation Model}
 
+Forecasting or estimation is the most important aspect of the Project planning activity. The most consequential estimates are related to schedule - time and budget - cost. As per the traditional classical project planning methodologies, they are calculated and presented as a single point estimate as in, an activity will take A days.Sometimes it is presented within a range, as in between A days to B days.But using a PERT like approach with three-point estimates for the variable with minimum A, most likely B and maximum C values are provided. Three point estimate provided the starting point for a two-fold approach to develop a Monte-Carlo simulation model and a tool in MS-Excel.
+
+Since Project planning is based on the Work Breakdown Structure for complex projects and all activities are defined accordingly to create an overall estimate of the complete project. However, the problem arises when the project manager combines the estimates of the individual activities into an overall estimate of the complete project. This straightforward addition may lead to an incorrect estimation of overall activity variables such as time and cost. This happens as estimates are necessarily based on probabilities and probabilities do not combine in an additive manner. Monte-Carlo Simulations provides an intuitive way to obtain probabilistic estimates for the entire project based on the individual estimates of the activities comprising the entire project. 
+
+Use of advanced methodology such as Monte-Carlo which is a powerful statistical analysis tool also used to understand the impact of risk and uncertainty in prediction and forecasting models. In order to create a Monte-Carlo model, the beginning step is to develop an estimate and for that it is important to understand the shape of uncertainty as probability distributions.
+
+\section{ Background definition}
+
+
+\emph{\textbf{Problem:}} Imagine an example, let’s consider a 4 activities project in IMAGE 1. The second is dependent on the first, and the third and dependent on the second but not on each other. The first two activities are in series and last two are in parallel, but can only be started if the second activity is completed.
+
+IMAGE 1: A project with 4 activities.
+
+IMAGE 1 also shows the three-point estimates for each activity i.e the minimum, most likely and the maximum completion times.
+
+\section{Shape of an uncertainty}
+	
+In order to understand, lets consider data for an Activity 1, it finishes in day B and the range possible to complete
+the activity lies between day A and day C. Clearly, each of the outcomes are not equally likely. The most likely outcome provided is day B. Moreover the likelihood of completing in less than A days or more than C days is zero. if we plot the likelihood of completion against completion time, the figure would look like IMAGE 2.
+
+IMAGE 2 : Likelihood of finishing on day A, day B and day C.
+
+IMAGE 2 poses several questions - 
+1. What are the relative likelihoods of completion for all intermediate times i.e. those between A to B Days and B to C days?
+2. How can we quantify the likelihood of intermediate times? How can one get a numerical value of the likelihood for all times between A to C days?  
+
+\textbf{Note:} The likelihood of completion must be zero for nay time less than A days or greater than C days.
+To answer the above-mentioned questions, when we know the relative likelihood of completion of all times, then it is easy to calculate the numerical value. As there is no information regarding intermediate times,it is assumed that likelihood increases linearly from A days to B days and decreases in the same way from B days to C days as shown in the IMAGE 3, it provides a triangular distribution.
+
+IMAGE 3: Triangular distribution fitted to points in IMAGE 1
+
+As there could be infinite number of possibilities.It can happen that the maximum duration C days can extend due to exceptional reasons and the activity gets delayed.In this case the likelihood will look like IMAGE 4.
+
+IMAGE 4: A distribution with potentially infinite completion time
+
+The important take away for the above-mentioned uncertainties should be expressed in shapes rather than numerical values as mentioned in a book by Sam Savage, "The flaw of Averages"
+
+As it can be seen, most of the distributions are skewed to the right with a long-tail and it resembles the most general feature of distributions which describes variables such as time and cost for project activities in infrastructure projects.
+
+
+\section{Research Approach}
 \subsection{A: Likelihood to Probability}
+
+Now lets define the quantitative measure of the likelihood.
+
+Consider the following:
+1. If an event is impossible, its likelihood should be zero.
+2. The sum of likelihoods of all possible events should equal complete certainty which should be a constant value. Since constant can be anything, in this case it is equal to 1.
+
+We denote a generic variable "v" and calculate its likelihood by $ P(t)$. These quantities can be extended to calculation of time and cost estimations for execution of the project. In this problem we are doing calculations for time.
+
 For a, b being the range of the activity duration, such that $v < a$ and $v > b$,
 
 \begin{equation}
@@ -17,18 +67,28 @@ and for  a $\leqslant$ v $\leqslant$ b,
 \sum_{v} p(v) = 1
 \end{equation}
 
+where $\sum{v}$ denotes sum of all non-zero likelihoods i.e. which lies between a and b variable values. $P(t)$ is called probability by mathematicians instead of the likelihood. With all the assumptions beforehand, we can calculate numerical values for the probability of completion for all variables between $a$ and $b$ and lets focus on the shape of the distribution. With this problem beforehand let's assume all four tasks can be fitted to triangular distributions.
+
 
 \subsection{B: Triangular Distribution}
 
-3 points, minimum, most likely and maximum.
+Let's focus on the estimates for activity 1, these three-point estimates are associated to each variable, minimum $v_ {min}$, most likely $v_ {ml}$ and maximum $v_ {max}$.
 
-To calculate the probability associated to each variable 
+To calculate the probability associated to each variables. Since the variable $v_ {min}$, and $v_ {max}$ corresponds to the minimum and maximum times, the probability associated with it both of them is zero. 
+
+Why?
+If it wasn't zero, then there would be a non-zero probabilities of completion for time less than $v_{min}$, or greater than $v_{max}$ which isn't possible. Here an assumption has been taken into account that probability varies continuously so for if it is a non-zero value , $p_{0}$  at $v_{min}$ then it must take a value lightly less than $p_{0}$, but greater than zero at v slightly smaller than $v_{min}$.
+
+Now, for the most likely $v_ {ml}$, by definition the probability attains its highest value at the $v_ {ml}$. Assuming, probability can be described by triangular function, the distribution is shown in IMGAE 5.
+
+IMAGE5: Triangular distribution redux
+
+For carrying out the simulation, it is needed to deduce the equation describing the above distribution.
 
 
 \subsection{C: Area under Triangle}
 
-The area under the triangle must be equal to 1, as the time taken to complete the task between $ v_{min} $ and $ v_{max} $ and hence 
-
+Firstly, the area under the triangle must be equal to 1, as the time taken to complete the task between $ v_{min} $ and $ v_{max} $ and hence 
 \begin{equation}
 \frac{1}{2} * base * altitude = \frac{1}{2} * (v_{max} - v_{min} ) * p(v_{ml}) = 1
 \label{eqn3}
@@ -36,23 +96,22 @@ The area under the triangle must be equal to 1, as the time taken to complete th
 
 where $p(v_{ml} $ is the probability of the variable ml.
 
-Furthermore,
-
-
+Furthermore, by rearranging we get, 
 \begin{equation}
 p(v_{ml}) = \frac{2}{  (v_{max} - v_{min})} 
 \label{eqn4}
 \end{equation}
 
-To derive probability for any quantity (v) lying between $ v_{min} $ and $ v_{ml} $ 
+To derive probability for any quantity (v) lying between $ v_{min} $ and $ v_{ml} $, 
 
 \begin{equation}
 \frac{(v - v_{min})}{ p(t) }  = \frac{(v_{ml} - v_{min})}{ p(ml) } 
 \label{eqn5}
 \end{equation}
 
-Consequence of ratios on either side of \ref{eqn5} is equal to slope of line joining points $(v_{min}, 0)$ and $( v_{ml}, p(ml) )$
+Consequence of ratios on either side of \ref{eqn5} is equal to slope of line joining points $(v_{min}, 0)$ and $( v_{ml}, p(ml) )$.
 
+IMAGE 6
 
 \subsection{D: }
 Substituting \ref{eqn3} in \ref{eqn4} and simplifying,
@@ -103,37 +162,88 @@ p(t)  = 1 -  \frac{(v_{max} - v)^{2}}{ (v_{ml} - v_{min}) (v_{max} - v_{min}) }
 
 For $ v_{ml} \leqslant v \leqslant v_{max}$, $p(t)$ ranges between 0 and $v_{min}$ and increases monotonically, attaining a value of 1 at $v_{max}$. 
 
-Put the ranges and $ a = v_{min}, b = v_{ml}, c = v_{max}$, the resulting PDF and CDF would be 
+Put the ranges and $ a = v_{min}, b = v_{ml}, c = v_{max}$, the resulting PDF and CDF are shown in IMAGE 8 and IMAGE 9.
+
+IMAGE8: PDF for triangular distribution ($v_{min} = a,  v_{ml} = b , v_{max} =c$)
+IMAGE9: CDF for triangular distribution ($v_{min} = a,  v_{ml} = b , v_{max} =c$)
+
+\section{Monte Carlo simulation technique in excel}
+
+The basic concept is to use Monte-Carlo simulations is to simulate the entire project for a large number of iterations N (let’s say for 10000) and thus obtain N overall completion variables (both time and cost in this case). In each of the N iterations, simulation is done for all the activities in the project and then added appropriately to give an overall project completion variable for the iteration. The resulting N overall completion variable will all be different ranging from the sum of minimum completion variables to the sum of maximum completion variable. In other words, it will help to obtain PDF and CDF for the overall completion variables.
+
+
+\subsection{Simulating a single activity using CDF}
+From IMAGE9, the CDF for the triangular distribution has a S shape and ranges from 0 and 1 inn value. All the CDFs has S shape regardless of the details underlying PDF.
+Why?
+The cumulative probability must lie between 0 and 1 as it can never be negative or greater than 1.
+
+For Monte-Carlo Simulation:
+
+\begin{enumerate}
+	\item To generate a random number between 0 and 1, it corresponds to the probability that the task will finish at variable {v}.
+	\item Find the variable {v}, which corresponds to value of probability, this is the completion time for this simulation Iteration. Incidentally, this method is called \emph{Increased Transform Sampling}.
+	\item For N iterations, a programmable mathematical algebra expression can provide variable corresponding to the probability directly. This is obtained by solving the equations \ref{eqn8} and  \ref{eqn9}.
+	
+	Solving equations \ref{eqn8} and  \ref{eqn9} yields the following expression for time (t):
+	
+	\begin{equation}
+	v = v_{min} + \sqrt{ p(v) (v_{ml} - v_{min}) * (v_{max} - v_{min})}
+	\label{eqn10}
+	\end{equation}
+	
+	for $ v_{min} \leqslant v \leqslant v_{ml}$ and 
+	
+	\begin{equation}
+	v = v_{max} - \sqrt{1 - (p(v) (v_{max} - v_{ml}) * (v_{max} - v_{min}))}
+	\label{eqn11}
+	\end{equation}
+	
+	for $ v_{ml} \leqslant v \leqslant v_{max}$. 
+	
+	\item Combine it with an Excel formula using IF function.
+	
+\end{enumerate}
 
 
 
 
+\subsection{Simulation}
 
-To simulate using Monte Carlo generate a random number between 0 and 1, it corresponds to the probability that the task will finish until time (t).
-
-Find the time t, which corresponds to value of probability, this is the completion time for this Simulation Iteration. Incidentally, this method is called Increase Transform Sampling. 
-
-Solving equations \ref{eqn8} and  \ref{eqn9} yields the following expression for time (t):
-
- \begin{equation}
- v = v_{min} + \sqrt{ p(v) (v_{ml} - v_{min}) * (v_{max} - v_{min})}
- \label{eqn10}
- \end{equation}
- 
-for $ v_{min} \leqslant v \leqslant v_{ml}$ and 
-
- \begin{equation}
-v = v_{max} - \sqrt{1 - (p(v) (v_{max} - v_{ml}) * (v_{max} - v_{min}))}
-\label{eqn10}
-\end{equation}
-
-for $ v_{ml} \leqslant v \leqslant v_{max}$. 
+Steps for simulation in Excel for N = 10000 iterations:
+\begin{enumerate}
+	\item Create a series of activities within the Excel workbook defining the variables as $v_ {min}, v_ {ml} and v_ {max}$ needed for the completion of entire project.
+\item Considering activity 1, Rows 3 to 5 in columns A and B shows the minimum, most likely and maximum completion variables and the same rows in Column C lists the probabilities for each variable.
 
 The probability for $v_{min}$ is 0 and for $v_{max}$ is 1. 
 
-The $P(v_{ml})$ can be calculated by using equation \ref{eqn8} wherein $v = v_{max}$ reduces the probability to 
+The $P(v_{ml})$ can be calculated by using equation \ref{eqn8} wherein $v = v_{max}$ reduces the probability to :
 
 \begin{equation}
 p(v)_{ml}  = \frac{(v_{ml} - v_{min})}{  (v_{max} - v_{min}) } 
-\label{eqn11}
+\label{eqn12}
 \end{equation}
+
+\item From Row 7 to 10006 in column A are simulated probabilities form activity 1. They are obtained by using MS-Excel RAND() function, which generates uniformly distributed random numbers between 0 and 1. This gives us a list of probabilities corresponding to 10000 independent iterations for an activity.
+
+\item The 10000 probabilities are to be translated into completion variable for the activity. It is done by using \ref{eqn8} and  \ref{eqn9}. depending on whether the simulated probability is less than or greater than $P (v_ {ml}) $, which is in cell C4 and given by \ref{eqn11}. This conditional function is done in Excel by using IF () function.
+\item Following all activities are simulated in a similar manner. Now let’s combine them: 
+\begin{itemize}
+	\item For activities in series, sum of all completion variables for each task are added to get overall completion variables, which is shown in Rows 7 to 10006 of Column N and Column R.
+	\item For activities in parallel, the overall completion variables is the maximum of the completion variables of the number of tasks in parallel. It is computed in Rows 7 to 10006 of Column N.
+\end{itemize}
+\item Finally, the overall project completion variable for each iteration is the sum of columns G, R and N and is shown in Column S.
+\item Sheets 2 and 3 shows the plots of the probability and cumulative probability distributions for complete project completion variables.
+\end{enumerate}
+
+\subsection{Explanation - probabilities (PDF and CDF) and estimates}
+
+The IMAGE 10 on sheet 2 of the MS-Excel is the probability distribution function (PDF) of the completion variables. The x - axis shows the elapsed variable and the y - axis shows the number of Monte-Carlo iterations that have a completion variable which lies in the relevant bin (of width 0.5 variable).
+
+
+As an example, for the simulation in IMAGE 10, considering variable as time in days, there were …. trials (out of 10000) that had completion time lying between …. and ….. days. Though, each times numbers can vary in Monte-Carlo, of course the maximum will lie between …. days range and iterations close to …..
+
+IMAGE 10: Probability distribution of completion times (N = 10000)
+
+Using Monte-Carlo, through CDF, which tells the greatest uncertainty in the estimates because that region in which probability change most rapidly as a function of elapsed variable. Of course, the exact results of the variable are dependent on assumptions of the distribution. In the end, as discussed earlier, that “uncertainty is a shape, not a number”. Monte-Carlo simulations make the uncertainty in forecasts explicit and can help to forecast in terms of probability and use it on a universal tool MS-Excel which is very handy and self-explanatory can be used by technical and non-technical individuals within an organization handling the project.
+
+
