@@ -23,13 +23,38 @@ Monte Carlo simulations are employed for effective risk management in wide-rangi
 
 In this thesis, we have adapted the Monte Carlo simulation to be utilized as a forecasting tool for project scheduling and cost estimation, which is enunciated in detail in subsequent chapters. We have addressed uncertainties that poses potential risks to the project and quantifying useful likelihoods for meeting project milestones and immediate time and cost goals. It can also predict occurrence of scheduling and cost overruns. Hence, it enables to restructure the project as per updated requirements. Monte Carlo tools can also be further used for sensitivity and uncertainty analysis for risk variables of the project. 
 
+\section{How MC Simulation Works}
+
+Monte Carlo simulation carries out risk analysis by building models of possible results by substituting a range of values - a probability distribution - for any factors that has inherent uncertainty. It then calculates results over many iterations, each time using a different set of random values from the probability functions. 
+
+Based on the number of uncertainties and their ranges, a Monte Carlo simulation could involve thousands of iterations that produces distributions of possible outcome values. By using probability distributions, variables can have probabilities for occurrence of different outcomes. Probability distributions are a much more realistic way of describing uncertainty in variables of a risk analysis.
+
+The standard deviation of that probability quantifies the likelihood that the actual outcome being estimated will be something other than the mean or most probable event. Assuming a probability distribution is normally distributed, approximately 68\% of the values will lie within one standard deviation of the mean, about 95\% of the values will lie within two standard deviations, and about 99.7\% will fall within three standard deviations of the mean. This is known as the "68-95-99.7 rule" or the "empirical rule."
+
+The most common probability distributions and certain important features related to them is described below.
+\begin{enumerate}
+	\item \textbf{Normal/Bell Curve:} The user simply defines the mean or expected value and a standard deviation to describe the variation about the mean. It is a symmetric curve and values at the center of distribution (near mean value) are ones most likely to occur in this kind of distribution. 
+	
+	\item \textbf{Lognormal Curve:} Unlike the normal distribution, it is an asymmetric curve since the values in this distribution are positively skewed. It is used to represent values that don't go below zero but have unlimited positive potential.
+		
+	\item \textbf{Uniform Curve:} All values have an equal chance of occurring, and the user simply defines the minimum and maximum. 
+		
+	\item \textbf{Triangular Curve:} The user defines the minimum, most likely, and maximum values. Values in the neighborhood of the most likely are more probable to occur. 
+	
+	\item \textbf{PERT Curve:}	The user defines the minimum, most likely, and maximum values, just like the triangular distribution. Values around the most likely are more likely to occur. However values between the most likely and extremes are more likely to occur than the triangular; that is, the extremes are not as emphasized. 
+	
+		\item \textbf{Discrete Curve:} The user defines specific values that may occur and the likelihood of each
+\end{enumerate}
+
 \begin{figure}
 	\centering
 	\includegraphics[height=0.23\textheight]{fig02/mc_distributions.jpg}
 	\mycaption[MC]{Distributions. Image Source:}
 \end{figure}
-\section{Advantages:}
-Monte Carlo simulation provides a number of advantages over deterministic, or "single-point estimate" analysis:
+
+
+\section{Advantages and Limitations of MC Simulation}
+Monte Carlo simulation provides a number of advantages over deterministic, or "single-point estimate" analysis like:
 \begin{enumerate}
 	\item \textbf{Probabilistic Results:} The result indicates not just what could happen, but also how likely each outcome is.
 	 \item \textbf{Graphical Results:} Monte Carlo simulation generates graphs of different outcomes and their chances of occurrence. This is important for communicating findings to other stakeholders.
@@ -40,6 +65,16 @@ Monte Carlo simulation provides a number of advantages over deterministic, or "s
 \end{enumerate}
 
  
+
+On the other hand, this approach also involves certain limitations like:
+\begin{enumerate}
+	\item The results are highly data-driven and data-dependent; therefore the quality of final estimates is directly impacted by quality and nature of input data.
+	\item The Monte Carlo Simulation shows the probability of completing the tasks, not the actual time to complete.
+	\item  This technique will not applicablr for a single activity along with completion of risk assessments completed as an pre-existing requirement.
+
+\end{enumerate} 
+
+
 
 
 
