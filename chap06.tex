@@ -1,0 +1,99 @@
+\let\textcircled=\pgftextcircled
+\chapter{Findings and Discussion}
+\label{chapFD}
+
+Following to chapter 5, after conducting Monte-Carlo Simulations the output provided is the likelihood of completion of objectives of the project in terms of time and cost and which is expressed through probability.
+
+\section{Results: Monte-Carlo simulation for total time} 
+
+
+The image \ref{img9ch6} on sheet PDF of the MS-Excel is the probability distribution function of the completion time. The x-axis shows elapsed time and the y-axis displays number of Monte-Carlo iterations that have a completion time which lies in the relevant bin (of width 6 days).
+
+The results are plotted as a histogram displaying the distribution of completion times over 10000 random sampling processes. 
+The basis of the histogram is the time in days calculated using MS-Excel functions (minimum, average , median and maximum) in the table below. The minimum and the maximum time defines the range of the histogram plot.
+
+\begin{center}
+	\begin{tabular}{ |c|c|} 
+		\hline
+		\multicolumn{2}{|c|}{Total Statistical Time for completion in Days} \\
+		\hline
+		Min & 466.8  \\
+		\hline
+		Avg& 526.2 \\ 
+		\hline
+		Median &526.3 \\ 
+		\hline
+		Max& 589.4\\ 
+		\hline
+	\end{tabular}
+\end{center}
+
+\begin{figure}
+	\centering
+	\includegraphics[height=0.45\textheight]{fig06/Img9chp6.jpg}
+	\mycaption[Number of trials v/s Total time in days 
+	]{Number of trials v/s Total time in days }
+	\label{img9ch6}
+\end{figure}
+
+ As a result of the nuclear infrastructure case study after simulating in image \ref{img9ch6}, considering time in days, there were 1130 trials (out of 10000) that had completion time lying between 513 days and 519 days. Even though each instance, the numbers may vary in Monte-Carlo, the maximum time will lie between 579 days range and iterations close to the previous calculation.
+ 
+
+\begin{figure}
+	\centering
+	\includegraphics[height=0.45\textheight]{fig06/Img10chp6.png}
+	\mycaption[MC]{Probability distribution of completion times (N = 10000) }
+	\label{img10ch6}
+\end{figure}
+
+
+The image \ref{img10ch6} shows the cumulative probability function (CDF), which is the sum of all the completion times from the earliest possible finish day until the actual day of completion. The findings are that the probability of completion is above 90\% 
+for total time of approximately 545 days. This is quite close to the forecast of total project duration of 615 days from October 2019 - June 2021. Uncertainty can be seen from 501 days till 549 days so it is the region where the probability changes most rapidly as function of elapsed time.
+
+
+\section{Results: Monte-Carlo Simulation for  Total Cost}
+The basis of the histogram is the cost in kCHF calculated using MS-Excel functions (minimum, average , median and maximum) in the table below. The minimum and the maximum cost defines the range of the histogram plot.
+\begin{center}
+	\begin{tabular}{ |c|c|} 
+		\hline
+		\multicolumn{2}{|c|}{Statistical total cost for completion in kCHF} \\
+		\hline
+		Min & 2251.7  \\
+		\hline
+		Avg &  2324.1\\ 
+		\hline
+		Median & 2323.6 \\ 
+		\hline
+		Max & 2405.6\\ 
+		\hline
+	\end{tabular}
+\end{center}
+
+
+The image \ref{img11ch6} on sheet PDF of the MS-Excel is the probability distribution function of the completion cost. The x-axis shows the incurred cost and the y-axis shows the number of Monte-Carlo iterations that has a completion cost, which lies in the relevant bin (of width 6 kCHF). The results are plotted as a histogram displaying the distribution of completion costs over the 10000 random sampling processes.  
+
+As an example, for the simulation in image \ref{img11ch6}, considering variable as cost in kCHF, there were 897 trials (out of 10000) that had completion time lying between 2300 kCHF and 2312 kCHF. Even though in each instance, the numbers can vary in Monte-Carlo, the maximum cost will lie close to 2400 kCHF and iterations close to the previous calculations.
+
+
+\begin{figure}
+	\centering
+	\includegraphics[height=0.35\textheight]{fig06/Img11chp6.jpg}
+	\mycaption[Number of trials v/s Total cost in kCHF.]{Number of trials v/s Total cost in kCHF.}
+	\label{img11ch6}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[height=0.35\textheight]{fig06/Img12chp6.png}
+	\mycaption[Probability distribution of completion costs (N = 10000)]{Probability distribution of completion costs (N = 10000)}
+	\label{img12ch6}
+\end{figure}
+
+
+
+The image \ref{img12ch6} shows the cumulative probability function (CDF), the sum of all the completion costs from the earliest possible finish day till the actual day of completion. The findings are that the probability of completion is above 90\% for a total cost of 2350 kCHF. This is quite close to the forecast of total project duration of 2326 kCHF. Uncertainty can be seen from 2294 kCHF till 2354 kCHF so it is the region where the probability changes most rapidly as a function of cost add critical activities can be planned to ensure project budget containment.
+
+ 
+ Monte-Carlo simulations make the uncertainty in forecasts explicit and can help to forecast in terms of probability and use it on a universal tool MS-Excel which is very handy and self-explanatory can be used by technical and non-technical individuals within an organization handling the project. It is essential that "new structure for guiding project control decisions to ensure that a project is completed on schedule when activity durations are uncertain and modeled by random variables. This structure consists of specifying a specification limit for each activity duration. During the project, if the time to complete an activity is going to exceed its specification limit, actions are taken, at some cost, to bring the time down to that limit"\cite{BOWMAN20061191}.
+ 
+ Monte Carlo simulation based models and tools explores alternative resource-allocation strategies for infrastructure projects that have uncertain activity duration and costs. It extends resource allocation beyond current models that assume activities' duration are deterministic. It supports efficient project planning and scheduling along with traditional project planning methodologies based on historical estimates. A combination of both will likely address project planning and scheduling risks like the Nano-Lab project, CERN and other complex projects in scientific environments.v
+ 
