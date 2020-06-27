@@ -10,34 +10,60 @@ Since Project planning is based on the Work Breakdown Structure for complex proj
 
 Use of advanced methodology such as Monte-Carlo which is a powerful statistical analysis tool also used to understand the impact of risk and uncertainty in prediction and forecasting models. In order to create a Monte-Carlo model, the beginning step is to develop an estimate and for that it is important to understand the shape of uncertainty as probability distributions.
 
-\section{ Background definition}
+\section{ Background Definition}
 
 
-\emph{\textbf{Problem:}} Imagine an example, let’s consider a 4 activities project in IMAGE 1. The second is dependent on the first, and the third and dependent on the second but not on each other. The first two activities are in series and last two are in parallel, but can only be started if the second activity is completed.
+\emph{\textbf{Problem:}} Imagine an example, let's consider a 4 activities project in IMAGE 1. The second activity is dependent on the first activity as they are in series, and the third and the fourth activity are dependent on the second activity but not on each other and in series with the fifth activity. The first two activities are in series and last two are in parallel but can only be started if the second activity is completed and then in series with the fifth activity.
 
-IMAGE 1: A project with 4 activities.
 
-IMAGE 1 also shows the three-point estimates for each activity i.e the minimum, most likely and the maximum completion times.
+\begin{figure}
+	\centering
+	\includegraphics[height=0.43\textwidth]{fig04/Img1ch4.png}
+	\mycaption[A project with 5 activities]{A project with 5 activities.}
+	\label{img1ch4}
+\end{figure}
 
-\section{Shape of an uncertainty}
+The image \ref{img1ch4} also shows the three-point estimates for each activity i.e the minimum, most likely and the maximum completion times.
+
+
+\section{Shape of an Uncertainty}
 	
-In order to understand, lets consider data for an Activity 1, it finishes in day B and the range possible to complete
-the activity lies between day A and day C. Clearly, each of the outcomes are not equally likely. The most likely outcome provided is day B. Moreover the likelihood of completing in less than A days or more than C days is zero. if we plot the likelihood of completion against completion time, the figure would look like IMAGE 2.
+In order to understand, lets consider data for an Activity 1, it finishes in 3 days and the range possible to complete the activity lies between 3 days and 7 days. It is clear that each of the outcomes are not equal likewise. The most likely outcome provided is 5 days. Moreover the likelihood of completing in less than 3 days or more than 7 days is zero. if we plot the likelihood of completion against completion time, the figure would look like image \ref{img2ch4}.
 
-IMAGE 2 : Likelihood of finishing on day A, day B and day C.
 
-IMAGE 2 poses several questions - 
-1. What are the relative likelihoods of completion for all intermediate times i.e. those between A to B Days and B to C days?
-2. How can we quantify the likelihood of intermediate times? How can one get a numerical value of the likelihood for all times between A to C days?  
+\begin{figure}
+	\centering
+	\includegraphics[height=0.33\textheight]{fig04/Img2ch4.png}
+	\mycaption[Likelihood of finishing in 3 days, 5 days or 7 days]{Likelihood of finishing in 3 days, 5 days or 7 days.}
+	\label{img2ch4}
+\end{figure}
 
-\textbf{Note:} The likelihood of completion must be zero for nay time less than A days or greater than C days.
-To answer the above-mentioned questions, when we know the relative likelihood of completion of all times, then it is easy to calculate the numerical value. As there is no information regarding intermediate times,it is assumed that likelihood increases linearly from A days to B days and decreases in the same way from B days to C days as shown in the IMAGE 3, it provides a triangular distribution.
+Image \ref{img2ch4} poses several questions:
 
-IMAGE 3: Triangular distribution fitted to points in IMAGE 1
+\begin{enumerate}
+	\item What are the relative likelihoods of completion for all intermediate times i.e. those between 3 to 5 Days and 5 to 7 days?
+	\item  How can we quantify the likelihood of intermediate times? How can one get a numerical value of the likelihood for all times between 3 to 7 days?  
+\end{enumerate}
 
-As there could be infinite number of possibilities.It can happen that the maximum duration C days can extend due to exceptional reasons and the activity gets delayed.In this case the likelihood will look like IMAGE 4.
+\textbf{Note:} The likelihood of completion must be zero for nay time less than 3 days or greater than 7 days.
+To answer the above-mentioned questions, when we know the relative likelihood of completion of all times, then it is easy to calculate the numerical value. As there is no information regarding intermediate times,it is assumed that likelihood increases linearly from 3 days to 5 days and decreases in the same way from 5 days to 7 days as shown in the IMAGE 3, it provides a triangular distribution.
 
-IMAGE 4: A distribution with potentially infinite completion time
+\begin{figure}
+	\centering
+	\includegraphics[height=0.33\textheight]{fig04/Img3ch4.png}
+	\mycaption[Triangular distribution fitted to points in Image \ref{img1ch4}]{Triangular distribution fitted to points in Image \ref{img1ch4}}
+	\label{img3ch4}
+\end{figure}
+
+As there could be infinite number of possibilities.It can happen that the maximum duration 7 days can extend due to exceptional reasons and the activity gets delayed.In this case the likelihood will look like image \ref{img4ch4}.
+
+
+\begin{figure}
+	\centering
+	\includegraphics[height=0.33\textheight]{fig04/Img4ch4.png}
+	\mycaption[A distribution with potentially infinite completion time]{A distribution with potentially infinite completion time}
+	\label{img4ch4}
+\end{figure}
 
 The important take away for the above-mentioned uncertainties should be expressed in shapes rather than numerical values as mentioned in a book by Sam Savage, "The flaw of Averages"
 
@@ -45,7 +71,7 @@ As it can be seen, most of the distributions are skewed to the right with a long
 
 
 \section{Research Approach}
-\subsection{A: Likelihood to Probability}
+\subsection{Likelihood to Probability}
 
 Now lets define the quantitative measure of the likelihood.
 
@@ -70,7 +96,7 @@ and for  a $\leqslant$ v $\leqslant$ b,
 where $\sum{v}$ denotes sum of all non-zero likelihoods i.e. which lies between a and b variable values. $P(t)$ is called probability by mathematicians instead of the likelihood. With all the assumptions beforehand, we can calculate numerical values for the probability of completion for all variables between $a$ and $b$ and lets focus on the shape of the distribution. With this problem beforehand let's assume all four tasks can be fitted to triangular distributions.
 
 
-\subsection{B: Triangular Distribution}
+\subsection{Triangular Distribution}
 
 Let's focus on the estimates for activity 1, these three-point estimates are associated to each variable, minimum $v_ {min}$, most likely $v_ {ml}$ and maximum $v_ {max}$.
 
@@ -79,14 +105,19 @@ To calculate the probability associated to each variables. Since the variable $v
 Why?
 If it wasn't zero, then there would be a non-zero probabilities of completion for time less than $v_{min}$, or greater than $v_{max}$ which isn't possible. Here an assumption has been taken into account that probability varies continuously so for if it is a non-zero value , $p_{0}$  at $v_{min}$ then it must take a value lightly less than $p_{0}$, but greater than zero at v slightly smaller than $v_{min}$.
 
-Now, for the most likely $v_ {ml}$, by definition the probability attains its highest value at the $v_ {ml}$. Assuming, probability can be described by triangular function, the distribution is shown in IMGAE 5.
+Now, for the most likely $v_ {ml}$, by definition the probability attains its highest value at the $v_ {ml}$. Assuming, probability can be described by triangular function, the distribution is shown in image \ref{img5ch4}.
 
-IMAGE5: Triangular distribution redux
+\begin{figure}
+	\centering
+	\includegraphics[height=0.33\textheight]{fig04/Img5ch4.png}
+	\mycaption[Triangular distribution redux]{Triangular distribution redux}
+	\label{img5ch4}
+\end{figure}
 
 For carrying out the simulation, it is needed to deduce the equation describing the above distribution.
 
 
-\subsection{C: Area under Triangle}
+\subsection{Area under Triangle}
 
 Firstly, the area under the triangle must be equal to 1, as the time taken to complete the task between $ v_{min} $ and $ v_{max} $ and hence 
 \begin{equation}
@@ -111,9 +142,15 @@ To derive probability for any quantity (v) lying between $ v_{min} $ and $ v_{ml
 
 Consequence of ratios on either side of \ref{eqn5} is equal to slope of line joining points $(v_{min}, 0)$ and $( v_{ml}, p(ml) )$.
 
-IMAGE 6
+\begin{figure}
+	\centering
+	\includegraphics[height=0.33\textheight]{fig04/Img6ch4.png}
+	\mycaption[MC]{}
+	\label{img6ch4}
+\end{figure}
 
-\subsection{D: }
+
+%\subsection{D: }
 Substituting \ref{eqn3} in \ref{eqn4} and simplifying,
 
 \begin{equation}
@@ -162,23 +199,35 @@ p(t)  = 1 -  \frac{(v_{max} - v)^{2}}{ (v_{ml} - v_{min}) (v_{max} - v_{min}) }
 
 For $ v_{ml} \leqslant v \leqslant v_{max}$, $p(t)$ ranges between 0 and $v_{min}$ and increases monotonically, attaining a value of 1 at $v_{max}$. 
 
-Put the ranges and $ a = v_{min}, b = v_{ml}, c = v_{max}$, the resulting PDF and CDF are shown in IMAGE 8 and IMAGE 9.
+Put the ranges and $ a = v_{min}, b = v_{ml}, c = v_{max}$, the resulting PDF and CDF are shown in images \ref{img7ch4} and \ref{img8ch4}.   
 
-IMAGE8: PDF for triangular distribution ($v_{min} = a,  v_{ml} = b , v_{max} =c$)
-IMAGE9: CDF for triangular distribution ($v_{min} = a,  v_{ml} = b , v_{max} =c$)
+\begin{figure}
+	\centering
+	\includegraphics[height=0.23\textheight]{fig04/Img7ch4.png}
+	\mycaption[PDF for triangular distribution ($v_{min} = a,  v_{ml} = b , v_{max} =c$)]{PDF for triangular distribution ($v_{min} = a,  v_{ml} = b , v_{max} =c$)}
+	\label{img7ch4}
+\end{figure}
 
-\section{Monte Carlo simulation technique in excel}
+\begin{figure}
+	\centering
+	\includegraphics[height=0.23\textheight]{fig04/Img8ch4.png}
+	\mycaption[CDF for triangular distribution ($v_{min} = a,  v_{ml} = b , v_{max} =c$)]{CDF for triangular distribution ($v_{min} = a,  v_{ml} = b , v_{max} =c$)}
+	\label{img8ch4}
+\end{figure}
 
-The basic concept is to use Monte-Carlo simulations is to simulate the entire project for a large number of iterations N (let’s say for 10000) and thus obtain N overall completion variables (both time and cost in this case). In each of the N iterations, simulation is done for all the activities in the project and then added appropriately to give an overall project completion variable for the iteration. The resulting N overall completion variable will all be different ranging from the sum of minimum completion variables to the sum of maximum completion variable. In other words, it will help to obtain PDF and CDF for the overall completion variables.
+
+\section{Monte Carlo Simulation Technique in Excel}
+
+The basic concept is to use Monte-Carlo simulations is to simulate the entire project for a large number of iterations N (let's say for 10000) and thus obtain N overall completion variables (both time and cost in this case). In each of the N iterations, simulation is done for all the activities in the project and then added appropriately to give an overall project completion variable for the iteration. The resulting overall N completion variables will be different ranging from the sum of minimum completion variables to the sum of maximum completion variable. In other words, it will help to obtain PDF and CDF for the overall completion variables.
 
 
-\subsection{Simulating a single activity using CDF}
+\subsection{Simulating Single Activity using CDF}
 \label{4.5.1}
-From IMAGE9, the CDF for the triangular distribution has a S shape and ranges from 0 and 1 inn value. All the CDFs has S shape regardless of the details underlying PDF.
-Why?
-The cumulative probability must lie between 0 and 1 as it can never be negative or greater than 1.
+From image \ref{img8ch4}, the CDF for the triangular distribution has a S shape and ranges from 0 and 1 inn value. All the CDFs has S shape regardless of the details underlying PDF.
 
-For Monte-Carlo Simulation:
+\textbf{Reason:} The cumulative probability must lie between 0 and 1 as it can never be negative or greater than 1.
+
+\textbf{For Monte-Carlo Simulation:}
 
 \begin{enumerate}
 	\item To generate a random number between 0 and 1, it corresponds to the probability that the task will finish at variable {v}.
@@ -236,15 +285,28 @@ p(v)_{ml}  = \frac{(v_{ml} - v_{min})}{  (v_{max} - v_{min}) }
 \item Sheets 2 and 3 shows the plots of the probability and cumulative probability distributions for complete project completion variables.
 \end{enumerate}
 
-\subsection{Explanation - probabilities (PDF and CDF) and estimates}
+\subsection{Explanation - Probabilities (PDF and CDF) and Estimates}
 
-The IMAGE 10 on sheet 2 of the MS-Excel is the probability distribution function (PDF) of the completion variables. The x - axis shows the elapsed variable and the y - axis shows the number of Monte-Carlo iterations that have a completion variable which lies in the relevant bin (of width 0.5 variable).
-
-
-As an example, for the simulation in IMAGE 10, considering variable as time in days, there were …. trials (out of 10000) that had completion time lying between …. and ….. days. Though, each times numbers can vary in Monte-Carlo, of course the maximum will lie between …. days range and iterations close to …..
-
-IMAGE 10: Probability distribution of completion times (N = 10000)
-
-Using Monte-Carlo, through CDF, which tells the greatest uncertainty in the estimates because that region in which probability change most rapidly as a function of elapsed variable. Of course, the exact results of the variable are dependent on assumptions of the distribution. In the end, as discussed earlier, that “uncertainty is a shape, not a number”. Monte-Carlo simulations make the uncertainty in forecasts explicit and can help to forecast in terms of probability and use it on a universal tool MS-Excel which is very handy and self-explanatory can be used by technical and non-technical individuals within an organization handling the project.
+The image \ref{img9ch4} on sheet named PDF of the MS-Excel is the probability distribution function (PDF) of the completion variables. The x- axis shows the elapsed variable and the y-axis shows the number of Monte-Carlo iterations that have a completion variable which lies in the relevant bin (of width 0.5 variable).
 
 
+As an example, for the simulation in image \ref{img9ch4}, considering variable as time in days, there were 1192 trials (out of 10000) that had completion time lying between 16.5 days and 17.5 days. Though, each times numbers can vary in Monte-Carlo, of course the maximum will lie between 16-18 days range and iterations close to as mentioned earlier.
+
+\begin{figure}
+	\centering
+	\includegraphics[height=0.35\textheight]{fig04/Img9ch4.png}
+	\mycaption[PDF, Probability distribution of completion times (N = 10000)]{PDF, Probability distribution of completion times (N = 10000)}
+	\label{img9ch4}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[height=0.58\textwidth]{fig04/Img10ch4.png}
+	\mycaption[CDF, Probability of completion by a particular day (N=10000)]{CDF, Probability of completion by a particular day (N=10000)}
+	\label{img10ch4}
+\end{figure}
+
+
+As discussed earlier the, CDF is considered rather than PDF, the above image11 shows the probability of completion by a particular day as in, 90\% likely that the project will finish in 19 days. Uncertainty can be seen from ~14 days till 19 days so it is the region where the probability changes most rapidly as function of elapsed time.
+
+Using Monte-Carlo, through CDF, which tells the greatest uncertainty in the estimates because that region in which probability change most rapidly as a function of elapsed variable. Of course, the exact results of the variable are dependent on assumptions of the distribution. In the end, as discussed earlier, that 'uncertainty is a shape, not a number'\cite{Uncertainty}. 
