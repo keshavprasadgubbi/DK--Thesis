@@ -1,9 +1,9 @@
 \let\textcircled=\pgftextcircled
 \chapter{Case Study of Nuclear Infrastructure}
 \label{chap:chap5}
-The Isotope mass Separator On-Line facility (ISOLDE)\cite{isolde} at CERN is a "unique source of low-energy beams of radioactive nuclides, those with too many or too few neutrons to be stable". The facility fulfills in fact the old alchemical dream of changing one element into another. It enables  a wide ranging study of atomic nuclei, including the most exotic species. 
+The Isotope mass Separator On-Line facility (ISOLDE)\cite{Garcia_Ruiz_2020} at CERN is a "unique source of low-energy beams of radioactive nuclides, those with too many or too few neutrons to be stable". The facility fulfills in fact the old alchemical dream of changing one element into another. It enables  a wide ranging study of atomic nuclei, including the most exotic species. 
 
-Owing to the volatility and pyrophoric properties of the radioactive particles, it is required to have dedicated laboratories to ensure safe handling of the radioactive particles. It is proposed to have an extension to existing "Class A laboratory"\cite{iaea} in order to provide safe space for handling and production of radioactive targets by building a dedicated space for carrying out the activities.
+Owing to the volatility and pyrophoric properties of the radioactive particles, it is required to have dedicated laboratories to ensure safe handling of the radioactive particles. It is proposed to have an extension to existing "Class A laboratory" \cite{iaea} in order to provide safe space for handling and production of radioactive targets by building a dedicated space for carrying out the activities.
 
 This decision for construction of Nano-Lab was taken by keeping in mind the benefits that can be availed from the already available infrastructure of the existing building.  A nuclear infrastructure project, the Nano-Lab, is studied during its design phase and currently in its execution phase. It is an extension of the existing building and will be comprised of a radioactive material storage area and two laboratories for manipulating uranium nano particles. The Nano-Lab project planning is the most critical step of the project management life cycle owing to the complex scientific environment at CERN and the potential risks associated to it. 
 
@@ -22,7 +22,7 @@ This decision for construction of Nano-Lab was taken by keeping in mind the bene
 \begin{figure}
 	\centering
 	\includegraphics[height=0.53\textheight]{fig05/img1chp5.png}
-	\mycaption[Proposed layout of the Nano-Lab]{Proposed layout of the Nano-Lab}
+	\mycaption[Proposed Layout of the Nano-Lab]{Proposed Layout of the Nano-Lab}
 \end{figure}
 
 In the design phase of the project areas, the approximate areas calculated for the Nano-Lab layout are: 
@@ -85,7 +85,7 @@ A brief outline of work packages \cite{EN-Groups}, \cite{SMB:CERN} are:
 	\begin{figure}
 		\centering
 		\includegraphics[height=0.4\textheight]{fig05/img2chp5.png}
-		\mycaption[Proposed lay-out of the Nano-Lab]{Proposed lay-out of the Nano-Lab}
+		\mycaption[Organizational Structure of the Nano-Lab Project]{Organizational Structure of the Nano-Lab Project}
 	\end{figure}
 
 	\item \textbf{Work Package$\_$2$\_$CV:} Cooling and Ventilation work packages is responsible for the design, construction, commissioning, maintenance and operations of the technical installations in Nano-Lab. The major activities they will carry out are: 
@@ -181,19 +181,15 @@ Using WBS, the project planning is done for both time and cost KPIs. Historical 
 
 \begin{figure}
 	\centering
-	\includegraphics[height=0.5\textheight]{fig05/img3chp5.png}
-	\mycaption[Gantt chart Schedule]{Gantt chart Schedule}
+	\includegraphics[height=0.64\textheight]{fig05/img3chp5.png}
+	\mycaption[Gantt Chart Schedule]{Gantt Chart Schedule}
 \end{figure}
 
 
 
-\subsection{Use of Monte-Carlo Simulation Model}
-
-%\subsubsection*{Scope}
+\subsection{Use of Monte-Carlo Simulation Model}\label{section5.3.1}
 
 Use PERT like approach wherein estimates for an activity are based on 3 points in variables like time and cost for Nano-Lab project. Monte- Carlo simulation provides a principled and intuitive way to obtain probabilistic estimates at the level of an entire project based on estimates of the individual activities that comprise it. This three-point estimate will be the input for the Monte-Carlo simulation model. 
-
-
 
 \begin{center}
 	\begin{tabular}{ |c|c|c|c| c|} 
@@ -319,7 +315,7 @@ Finally, the overall project completion variable for each iteration is the sum o
 \begin{center}
 	\begin{tabular}{ |c|c|c|c|c| c|} 
 		\hline
-		\multicolumn{5}{|c|}{Forecasted Estimates of Time for all Work Package Activities} \\
+		%\multicolumn{5}{|c|}{Forecasted Estimates of Time for all Work Package Activities} \\
 		\hline
 		N&Activity & Minimum & Most Likely & Maximum\\
 		\hline
@@ -397,8 +393,6 @@ Finally, the overall project completion variable for each iteration is the sum o
 		\hline
 		33&RP Tests&10&12&15\\
 		\hline
-		N&Activity & Minimum & Most Likely & Maximum\\
-		\hline
 		34&Demolish Existing \& Temporary Doors&5&10&20\\
 		\hline
 		35&Resin&10&15&25\\
@@ -428,96 +422,100 @@ The cost and schedule activities are calculated separately. Similarly, simulatio
 
 \subsection{Run simulation for Variable - Cost}
 
-\textbf{Input data:} Cost in kCHF
+\textbf{Input data:} Cost in kCHF. The values for cost are assumed only for the purpose of calculation and are fictitious in nature.
+
 
 \begin{table}[ht]
 	
 \begin{center}
 	\begin{tabular}{ |c|c|c|c|c|} 
 		\hline
-		\multicolumn{4}{|c|}{Forecasted Cost Estimates for all Work Package Activities} \\
+		%\multicolumn{4}{|c|}{Forecasted Cost Estimates for all Work Package Activities} \\
 		\hline
-		Work Units 										& min & Most  Likely&Max\\
+		
+		Work Units 													& min & Most  Likely&Max\\
 		\hline
-		\colorbox{Melon}{Total Civil Engineering}	&979   						& 		1060			& 1140\\ 
+		\colorbox{Melon}{Total Civil Engineering}	&378.9 &394.9&410.9\\ 
 		\hline
-		\colorbox{Melon}{Studies}							&120						& 	120				&120\\ 
+		\colorbox{Melon}{Studies}							&75&75&75\\ 
 		\hline
-		\colorbox{Melon}{Preliminary Works}					&100						& 		110			&120\\ 
+		\colorbox{Melon}{Preliminary Works}			&90&94&98\\ 
 		\hline
-		\colorbox{Melon}{Earth Works and Concrete}		&535 							& 		589			& 642\\
+		\colorbox{Melon}{Earth Works and Concrete}	&52 &57&63\\
 		\hline
-		\colorbox{Melon}{Finishing}						&		150					& 		165		&180\\ 
+		\colorbox{Melon}{Finishing}							&93&97&100\\ 
 		\hline
-		\colorbox{Melon}{Services for IT}				&24   							& 	26				&28\\
+		\colorbox{Melon}{Services for IT}				&21&24&27\\
 		\hline
-		\colorbox{Melon}{Draftsman/Work Supervisor}		&50   							& 	50				&50\\
+		\colorbox{Melon}{Draftsman/Work Supervisor}		&47.9&47.9&47.9\\
 		\hline
-		\colorbox{Gray}{HVAC}								&552   							& 		575			& 600\\
+		\colorbox{Gray}{HVAC}								&436 &469.5& 498.8\\
 		\hline
-		\colorbox{Gray}{Replacement of Process Extractor}	&1   13.25		& 		13.78			&14.31\\
+		\colorbox{Gray}{Replacement of Process Extractor}	&11.5& 13.3&15.3\\
 		\hline
-		\colorbox{Gray}{Duct Work and Diffusers}		&62 		& 		64.48			&66.96\\
+		\colorbox{Gray}{Duct Work and Diffusers}		&62.4&65.8&67.6\\
 		\hline
-		\colorbox{Gray}{Pipe Work Process}		&41   							& 			42.64		&44.28\\
+		\colorbox{Gray}{Pipe Work Process}		&40& 43&46\\
 		\hline
-		\colorbox{Gray}{Cooling Pump Stand}	&18.2   			& 		18.92			&19.65\\
+		\colorbox{Gray}{Cooling Pump Stand}	&17.8&18.6&19.4\\
 		\hline
-		\colorbox{Gray}{Compressed Air}			&5.5   							& 	5.72				&5.94\\
+		\colorbox{Gray}{Compressed Air}			&4.5&5.2&5.9\\
 		\hline
-		\colorbox{Gray}{Instrumentation}		&24   							& 	24.96				&25.92\\
+		\colorbox{Gray}{Instrumentation}		&25&25&27\\
 		\hline
-		\colorbox{Gray}{Accessories}			&109   							& 113.36			&117.72\\
+		\colorbox{Gray}{Accessories}			&11&11.6&12.2\\
 		\hline
-		\colorbox{Gray}{Filters}			&72  							& 	74.48				&77.76\\
+		\colorbox{Gray}{Filters}					&72.4&73.6&74.4\\
 		\hline
-		\colorbox{Gray}{Modification existing Power Cubicle}	&5   							& 		5.2			&5.4\\
+		\colorbox{Gray}{Modification existing Power Cubicle}	&5.1  & 		5.3			&5.5\\
 		\hline
-		\colorbox{Gray}{Control Cubicle}		&15   							& 		15.6			&16.2\\
+		\colorbox{Gray}{Control Cubicle}		&13   							& 		14.6			&15.2\\
 		\hline
-		\colorbox{Gray}{Electric Cabling- Earthing \& Carriers}	&20 			& 	21.8				&21.6\\
+		\colorbox{Gray}{Electric Cabling- Earthing \& Carriers}	&18 			& 	21.8				&25.6\\
 		\hline
-		\colorbox{Gray}{Design. Documentation as built and Marking}	&47  			& 		48.88			&50.76\\
+		\colorbox{Gray}{Design. Documentation as built and Marking}	&42  			& 		45			&48\\
 		\hline
-		\colorbox{Gray}{FAT, Testing and Commissioning }		&20   							& 	20.8				&21.6\\
+		\colorbox{Gray}{FAT, Testing and Commissioning }		&18   							& 	22.8				&25.6\\
 		\hline
-		\colorbox{Gray}{Transport, Manual Handling }	&10   & 10.4	&10.8\\
+		\colorbox{Gray}{Transport, Manual Handling }	&10   & 12.4	&14.8\\
 		\hline
-		\colorbox{Gray}{Others}			&6   		& 	6.2	4			&6.48\\
+		\colorbox{Gray}{Others}			&5.8   		& 	6.3			&6.8\\
 		\hline
-		\colorbox{Gray}{Scaffolding}		&3   							& 	3.12				& 3.24\\
+		\colorbox{Gray}{Scaffolding}		&2.9   							& 	3.8				& 4.7\\
 		\hline
-		\colorbox{Gray}{FSU Control Software}		&15   							& 		15.6			&16.2\\
+		\colorbox{Gray}{FSU Control Software}		&13   							& 		14.6			&15.2\\
 		\hline
-		\colorbox{Gray}{FSU Supervision During Work}	&18.75   		& 		19.5			&20.25\\
+		\colorbox{Gray}{FSU Supervision During Work}	&17.5   		& 		18.7			&19.5\\
 		\hline
-		\colorbox{Gray}{FSU Draftsman}		&16.5   			& 	17.16				&17.82\\
+		\colorbox{Gray}{FSU Draftsman}		&15.8   			& 	16.2				&16.6\\
 		\hline
-		\colorbox{Gray}{FSU Documentation and Inventory}	&10.4  							& 			10.4		&10.8\\
+		\colorbox{Gray}{FSU Documentation and Inventory}	&9.7  							& 			10.4		&11.1\\
 		\hline
 		\colorbox{Gray}{BAG Oxidation}										&0   							& 	0				&0\\
 		\hline
-		\colorbox{Gray}{Modification Existing Rooms}	&21.18   							& 		23.29			&25.41\\
+		\colorbox{Gray}{Modification Existing Rooms}	&20.6  							& 		21.5			&22.4\\
 		\hline
-		\colorbox{Melon}{Electricity}		&20   							& 	22				&24\\
+		\colorbox{Melon}{Electricity}		&18   							& 	22.4				&26.4\\
 		\hline
-		\colorbox{Gray}{IT}		&14   							& 	15				&16\\
+		\colorbox{Gray}{IT}		&13   							& 	15				&17\\
 		\hline
-		\colorbox{Melon}{RP Monitoring}		&110  							& 	121				&132\\
+		\colorbox{Melon}{RP Monitoring}		&96  							& 	98				&100\\
 		\hline
-		\colorbox{Gray}{Fire Detection}			&37  							& 	41				&44\\
+		\colorbox{Gray}{Fire Detection}			&28  							& 	35				&42\\
 		\hline
-		\colorbox{Melon}{Gas }										&35.18					& 			39		&42\\
+		\colorbox{Melon}{Gas }		&34.7					& 			38.6		&42.4\\
 		\hline
-		\colorbox{Gray}{Access Control}			&13.42						& 	15					&16   \\
+		\colorbox{Gray}{Access Control}			&16.7						& 	17.1					&17.5   \\
 		\hline
-		\colorbox{Melon}{Laboratory equipment}			&202   							& 	222.2				&242.4\\
+		\colorbox{Melon}{Laboratory Equipment}			&85   							& 	92				&99\\
 		\hline
-		Total Project 	Cost								&2177   							& 2325					&2472\\
+		\colorbox{Gray}{Resource Project Management}			&95.6  							& 	95.6				&95.6\\
+		\hline
+		Total Project 	Cost								&1201.9							& 1278.1					&1349.6\\
 		\hline
 	\end{tabular}
 \end{center}
-\caption[Forecasted Cost Estimates for all Work Package Activities]{Forecasted Cost Estimates for all Work Package Activities}
+\caption[Forecasted Cost Estimates for Work Package Activities]{Forecasted Cost Estimates for Work Package Activities}
 \label{tab:caption2}
 \end{table}%
 
