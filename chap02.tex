@@ -2,36 +2,36 @@
 \chapter{Monte Carlo Simulation}
 \label{chap:litrev}
 \section{Introduction}
-Monte Carlo simulation is a computational technique for modeling and analyzing real-world systems and situations through projections of existing data for managing risks and uncertainties during project management. The results from these simulations allow project-managers to identify, analyze, and assess possible risks and develop risk mitigation and contingency plans during the execution of complex projects. We can therefore account for risk in quantitative analysis and decision making to handle difficult situations and by incorporating such interventions, we can equip and empower the project-manager to lead the project towards successful completion. 
+Monte Carlo simulation is a computational technique for modeling and analyzing real-world systems and situations through projections of existing data for managing uncertainties during project management. The results from these simulations allow project-managers to identify, analyze, and assess possible risks and develop risk mitigation and contingency plans during the execution of complex projects. We can therefore account for risk in quantitative analysis and decision making to handle difficult situations and by incorporating such interventions, we can equip and empower the project-manager to lead the project towards successful completion. 
 
 \begin{figure}
 	\centering
 	\includegraphics[height=0.23\textheight]{fig02/risk.png}
-	\mycaption[MC Simulation Workflow]{MC Simulation Workflow}
+	\mycaption[MC Simulation Workflow]{MC Simulation Workflow \cite{MCRisk}}
 \end{figure}
 
-The technique (named after the Monaco town famous for its casinos) was initially developed by scientists working on the atom bomb during the second world war to game for possible scenarios in the outcome of the Manhattan project and the potential roadblocks that could arise during the execution of the secretive and high-stakes project. Monte Carlo simulation provides the decision-maker with a plethora of possible outcomes and their respective probabilities of occurrence for any given choice of action. These possibilities includes extremes - the outcomes of going for broke and the conservative option - along with all possible consequences for intermediary decisions. In the field of project management, Monte Carlo simulation can quantify the effects of risk and uncertainty in project schedules and budgets, giving the project manager a statistical indicator of project performance such as target completion date and budget.
+Monte Carlo simulation \cite{mcoutcomes} provides the decision-maker with a plethora of possible outcomes and their respective probabilities of occurrence for any given choice of action. These possibilities includes extremes - the outcomes of going for broke and the conservative option - along with all possible consequences for intermediary decisions. In the field of project management, Monte Carlo simulation can quantify the effects of risk and uncertainty in project schedules and budgets, giving the project manager a statistical indicator of project performance such as target completion date and budget.
 
 
 \begin{figure}
 	\centering
 	\includegraphics[height=0.23\textheight]{fig02/monte-carlo-simulation.png}
-	\mycaption[Range of Outcomes]{Range of Outcomes}
+	\mycaption[Range of Outcomes]{Range of Outcomes \cite{mcoutcomes}}
 \end{figure}
 
-Monte Carlo simulations are employed for effective risk management in wide-ranging fields such as manufacturing, engineering, finance, project management, energy, research and development, insurance, oil \& gas, and transportation. 
+Monte Carlo simulations are employed for effective risk management \cite{MCinvest} in wide-ranging fields such as manufacturing, engineering, finance, project management, energy, research and development, insurance, oil \& gas, and transportation. 
 
 In this thesis, we have adapted the Monte Carlo simulation to be utilized as a forecasting tool for project scheduling and cost estimation, which is enunciated in detail in subsequent chapters. We have addressed uncertainties that poses potential risks to the project and quantifying useful likelihoods for meeting project milestones and immediate time and cost goals. It can also predict occurrence of scheduling and cost overruns. Hence, it enables to restructure the project as per updated requirements. Monte Carlo tools can also be further used for sensitivity and uncertainty analysis for risk variables of the project. 
 
 \section{How MC Simulation Works}
 
-Monte Carlo simulation carries out risk analysis by building models of possible results by substituting a range of values - a probability distribution - for any factors that has inherent uncertainty. It then calculates results over many iterations, each time using a different set of random values from the probability functions. 
+Monte Carlo simulation helps to build models using probability distributions - for any factors that has inherent uncertainty. It then calculates results over many iterations, each time using a different set of random values from the probability functions. 
 
-Based on the number of uncertainties and their ranges, a Monte Carlo simulation could involve thousands of iterations that produces distributions of possible outcome values. By using probability distributions, variables can have probabilities for occurrence of different outcomes. Probability distributions are a much more realistic way of describing uncertainty in variables of a risk analysis.
+Based on the number of uncertainties and their ranges, a Monte Carlo simulation could involve thousands of iterations that produces distributions of possible outcome values. By using probability distributions, variables can have probabilities for occurrence of different outcomes. Probability distributions are a much more realistic way of describing uncertainty in variables in terms of time and cost.
 
-The standard deviation of that probability quantifies the likelihood that the actual outcome being estimated will be something other than the mean or most probable event. Assuming a probability distribution is normally distributed, approximately 68\% of the values will lie within one standard deviation of the mean, about 95\% of the values will lie within two standard deviations, and about 99.7\% will fall within three standard deviations of the mean. This is known as the "68-95-99.7 rule" or the "empirical rule."
+The standard deviation of that probability quantifies the likelihood that the actual outcome being estimated will be something other than the mean or most probable event. Assuming a probability distribution is normally distributed, approximately 68\% of the values will lie within one standard deviation of the mean, about 95\% of the values will lie within two standard deviations, and about 99.7\% will fall within three standard deviations of the mean. This is known as the "68-95-99.7 rule" \cite{MCSimulation} or the "empirical rule."
 
-The most common probability distributions and certain important features related to them is described below.
+The most common probability distributions \cite{MCSimulation} and certain important features related to them is described below.
 \begin{enumerate}
 	\item \textbf{Normal/Bell Curve:} The user simply defines the mean or expected value and a standard deviation to describe the variation about the mean. It is a symmetric curve and values at the center of distribution (near mean value) are ones most likely to occur in this kind of distribution. 
 	
@@ -49,18 +49,18 @@ The most common probability distributions and certain important features related
 \begin{figure}
 	\centering
 	\includegraphics[height=0.23\textheight]{fig02/mc_distributions.jpg}
-	\mycaption[Distributions]{Distributions}
+	\mycaption[Distributions]{Distributions \cite{MCSimulation}}
 \end{figure}
 
 
 \section{Advantages and Limitations of MC Simulation}
-Monte Carlo simulation provides a number of advantages over deterministic, or "single-point estimate" analysis like:
+Monte Carlo simulation provides a number of advantages \cite{MCSimulation} over deterministic, or "single-point estimate" analysis like:
 \begin{enumerate}
 	\item \textbf{Probabilistic Results:} The result indicates not just what could happen, but also how likely each outcome is.
 	 \item \textbf{Graphical Results:} Monte Carlo simulation generates graphs of different outcomes and their chances of occurrence. This is important for communicating findings to other stakeholders.
-	 \item \textbf{Scenario Analysis:} In deterministic models, it’s very difficult to model different combinations of values for various inputs to see the effects of truly different scenarios. Using Monte Carlo simulation, an analyst can quantitatively predict the inputs that had clustered values when certain outcomes occurred. This will be immensely valuable for pursuing further analysis.
+	 \item \textbf{Scenario Analysis:} In deterministic models, it's very difficult to model different combinations of values for various inputs to see the effects of truly different scenarios. Using Monte Carlo simulation, an analyst can quantitatively predict the inputs that had clustered values when certain outcomes occurred. This will be immensely valuable for pursuing further analysis.
      \item \textbf{Sensitivity Analysis:} Deterministic analyses makes it difficult to predict the variables that have the maximum impact on the outcome. In Monte Carlo simulation, it’s easy to see which inputs had the biggest effect on bottom-line results.
-	 \item \textbf{Correlation of Inputs:} In Monte Carlo simulation, it's possible to model interdependent relationships between input variables. It’s important for accuracy to represent how, in reality, when some factors goes up, others go up or down accordingly.
+	 \item \textbf{Correlation of Inputs:} In Monte Carlo simulation, it's possible to model interdependent relationships between input variables. It's important for accuracy to represent how, in reality, when some factors goes up, others go up or down accordingly.
 	 \item \textbf{Quantifiable Reasoning:} Monte Carlo simulation allows project-managers to better justify and communicate their arguments in the face of unrealistic project expectations.
 \end{enumerate}
 
