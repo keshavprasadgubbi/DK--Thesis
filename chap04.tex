@@ -51,7 +51,7 @@ To answer the above-mentioned questions, when we know the relative likelihood of
 \begin{figure}
 	\centering
 	\includegraphics[height=0.33\textheight]{fig04/Img3ch4.png}
-	\mycaption[Triangular distribution fitted to points in Image \ref{img1ch4}]{Triangular distribution fitted to points in Image \ref{img1ch4}}
+	\mycaption[Triangular Distribution Fitted to Points in Image \ref{img1ch4}]{Triangular Distribution Fitted to Points in Image \ref{img1ch4}}
 	\label{img3ch4}
 \end{figure}
 
@@ -61,7 +61,7 @@ As there could be infinite number of possibilities.It can happen that the maximu
 \begin{figure}
 	\centering
 	\includegraphics[height=0.33\textheight]{fig04/Img4ch4.png}
-	\mycaption[A distribution with potentially infinite completion time]{A distribution with potentially infinite completion time}
+	\mycaption[A Distribution with Potentially Infinite Completion Time]{A Distribution with Potentially Infinite Completion Time}
 	\label{img4ch4}
 \end{figure}
 
@@ -110,7 +110,7 @@ Now, for the most likely $v_ {ml}$, by definition the probability attains its hi
 \begin{figure}
 	\centering
 	\includegraphics[height=0.33\textheight]{fig04/Img5ch4.png}
-	\mycaption[Triangular distribution redux]{Triangular distribution redux}
+	\mycaption[Triangular Distribution Redux]{Triangular Distribution Redux}
 	\label{img5ch4}
 \end{figure}
 
@@ -145,7 +145,7 @@ Consequence of ratios on either side of \ref{eqn5} is equal to slope of line joi
 \begin{figure}
 	\centering
 	\includegraphics[height=0.33\textheight]{fig04/Img6ch4.png}
-	\mycaption[MC]{}
+	\mycaption[Triangular Distribution for Calculating Probability]{Triangular Distribution for Calculating Probability}
 	\label{img6ch4}
 \end{figure}
 
@@ -204,14 +204,14 @@ Put the ranges and $ a = v_{min}, b = v_{ml}, c = v_{max}$, the resulting PDF an
 \begin{figure}
 	\centering
 	\includegraphics[height=0.23\textheight]{fig04/Img7ch4.png}
-	\mycaption[PDF for triangular distribution ($v_{min} = a,  v_{ml} = b , v_{max} =c$)]{PDF for triangular distribution ($v_{min} = a,  v_{ml} = b , v_{max} =c$)}
+	\mycaption[PDF for Triangular Distribution ($v_{min} = a,  v_{ml} = b , v_{max} =c$)]{PDF for Triangular Distribution ($v_{min} = a,  v_{ml} = b , v_{max} =c$)}
 	\label{img7ch4}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[height=0.23\textheight]{fig04/Img8ch4.png}
-	\mycaption[CDF for triangular distribution ($v_{min} = a,  v_{ml} = b , v_{max} =c$)]{CDF for triangular distribution ($v_{min} = a,  v_{ml} = b , v_{max} =c$)}
+	\mycaption[CDF for Triangular Distribution ($v_{min} = a,  v_{ml} = b , v_{max} =c$)]{CDF for Triangular Distribution ($v_{min} = a,  v_{ml} = b , v_{max} =c$)}
 	\label{img8ch4}
 \end{figure}
 
@@ -287,7 +287,7 @@ p(v)_{ml}  = \frac{(v_{ml} - v_{min})}{  (v_{max} - v_{min}) }
 
 \subsection{Explanation - Probabilities (PDF and CDF) and Estimates}
 
-The image \ref{img9ch4} on sheet named PDF of the MS-Excel is the probability distribution function (PDF) of the completion variables. The x- axis shows the elapsed variable and the y-axis shows the number of Monte-Carlo iterations that have a completion variable which lies in the relevant bin (of width 0.5 variable).
+The image \ref{img9ch4} on sheet named PDF of the MS-Excel is the probability distribution function (PDF) of the completion variables as shown in \texttt{MonteCarloExcelTool\_Problem} in \cite{Github}. The x-axis shows the elapsed variable and the y-axis shows the number of Monte-Carlo iterations that have a completion variable which lies in the relevant bin (of width 0.5 variable).
 
 
 As an example, for the simulation in image \ref{img9ch4}, considering variable as time in days, there were 1192 trials (out of 10000) that had completion time lying between 16.5 days and 17.5 days. Though, each times numbers can vary in Monte-Carlo, of course the maximum will lie between 16-18 days range and iterations close to as mentioned earlier.
@@ -309,4 +309,4 @@ As an example, for the simulation in image \ref{img9ch4}, considering variable a
 
 As discussed earlier the, CDF is considered rather than PDF, the above image11 shows the probability of completion by a particular day as in, 90\% likely that the project will finish in 19 days. Uncertainty can be seen from ~14 days till 19 days so it is the region where the probability changes most rapidly as function of elapsed time.
 
-Using Monte-Carlo, through CDF, which tells the greatest uncertainty in the estimates because that region in which probability change most rapidly as a function of elapsed variable. Of course, the exact results of the variable are dependent on assumptions of the distribution. In the end, as discussed earlier, that 'uncertainty is a shape, not a number'\cite{Uncertainty}. 
+Using Monte-Carlo, through CDF, which tells the greatest uncertainty in the estimates because that region in which probability change most rapidly as a function of elapsed variable. Of course, the exact results of the variable are dependent on assumptions of the distribution. In the end, as discussed earlier, that "uncertainty is a shape, not a number" \cite{Uncertainty}. 
