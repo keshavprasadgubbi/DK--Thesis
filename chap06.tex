@@ -4,7 +4,7 @@
 
 Following to chapter 5, after conducting Monte-Carlo Simulations the output provided is the likelihood of completion of objectives of the project in terms of time and cost and which is expressed through probability.
 
-\section{Results: Monte-Carlo simulation for total time} 
+\section{Results: Monte-Carlo Simulation for Total Time} 
 \label{section6.1}
 
 The image \ref{img9ch6} on sheet PDF of the MS-Excel is the probability distribution function of the completion time. The x-axis shows elapsed time and the y-axis displays number of Monte-Carlo iterations that have a completion time which lies in the relevant bin (of width 6 days).
@@ -53,45 +53,51 @@ for total time of approximately 545 days. This is quite close to the forecast of
 
 \section{Results: Monte-Carlo Simulation for  Total Cost}\label{section6.2}
 
-The basis of the histogram is the cost in kCHF calculated using MS-Excel functions (minimum, average , median and maximum) in the table below. The minimum and the maximum cost defines the range of the histogram plot.
+The basis of the histogram is the cost calculated using MS-Excel functions (minimum, average , median and maximum) in the table below. The minimum and the maximum cost defines the range of the histogram plot.
 \begin{center}
 	\begin{tabular}{ |c|c|} 
 		\hline
-		\multicolumn{2}{|c|}{Statistical total cost for completion in kCHF} \\
+		\multicolumn{2}{|c|}{Statistical total cost for completion (scale of 100 points)} \\
 		\hline
-		Min & 1318.7  \\
+		Min & 93.2  \\
 		\hline
-		Avg &  1322.0\\ 
+		Avg &  95.7\\ 
 		\hline
-		Median & 1322.0 \\ 
+		Median & 95.7 \\ 
 		\hline
-		Max & 1345.4\\ 
+		Max & 99.4\\ 
 		\hline
 	\end{tabular}
 \end{center}
 
 
-The image \ref{img11ch6} on sheet PDF of the MS-Excel is the probability distribution function of the completion cost. The x-axis shows the incurred cost and the y-axis shows the number of Monte-Carlo iterations that has a completion cost, which lies in the relevant bin (of width 3 kCHF). The
-results are plotted as a histogram displaying the distribution of completion costs over the 10000 random sampling processes. 
+The image \ref{img11ch6} on sheet PDF of the MS-Excel is the probability distribution function of the completion cost. The x-axis shows the incurred cost and the y-axis shows the number of Monte-Carlo iterations that has a completion cost, which lies in the relevant bin (of width 0.5 points). The results are plotted as a histogram displaying the distribution of completion costs over the 10000 random sampling processes.
 
-As an example, for the simulation in image \ref{img11ch6}, considering variable as cost in kCHF, there were 1815 trials (out of 10000) that had completion time lying between 1311 kCHF and 1317 kCHF. Even though in each instance, the numbers can vary in Monte-Carlo, the maximum cost will lie close to 1314 kCHF and iterations close to the previous calculations.
 
-The image \ref{img12ch6} shows the cumulative probability function (CDF), the sum of all the completion costs from the earliest possible finish day till the actual day of completion. The findings are that the probability of completion is above 90\% for a total cost of 1326 kCHF. This is quite close to the forecast of total project duration of 1350 kCHF. Uncertainty can be seen from 1311 kCHF till 1326 kCHF so it is the region where the probability changes most rapidly as a function of cost add critical activities can be planned to ensure project budget containment.
+As an example, for the simulation in image  \ref{img11ch6}, considering variable as cost , there were 2179  trials (out of 10000) that had completion time lying between 94.5 and 95.5 points. Even though in each instance, the numbers can vary in Monte-Carlo, the maximum cost will lie close to 100 points and iterations close to the previous calculations.
+
+The image \ref{img12ch6} shows the cumulative probability function (CDF), the sum of all the completion costs of the entire project. The findings are that the probability of completion is above 90\% for a total cost of 97 points. This is quite close to the forecast of estimated most likely total project cost of 92 points, which is slightly underestimated than 97 points. However, it can be managed, as it is lower than the maximum allocated budget is 100 points In this case, modification could be done to optimize the cost allocated to each activity in order to do cost-containment. Uncertainty can be seen from 95 points till 97 points which shows the region where the probability changes most rapidly as a function of cost and it can be used as an input  in monitoring critical activities.
+
+\clearpage
+In addition to it, the project cost estimate is 92 points, the remaining 8 points corresponds to both contingency amounts and to cover inflation costs. These 8 points are included in the project cost to accommodate unforeseen situations and resulting associated costs \cite{cmu}. It is included in the final cost estimate while forecasting the estimated maximum total cost of 100 points. The inflation costs is associated to individual cost items in the total estimated cost as for Nano-Lab project, both CHF or Euro cost items are forecasted inclusive of a conversion factor. 
+
+
 
 \begin{figure}
 	\centering
-	\includegraphics[height=0.35\textheight]{fig06/Img11chp6.png}
-	\mycaption[Number of trials v/s Total cost in kCHF.]{Number of trials v/s Total cost in kCHF.}
+	\includegraphics[height=0.35\textheight]{fig06/img63.png}
+	\mycaption[Number of trials v/s Total cost]{Number of trials v/s Total cost}
 	\label{img11ch6}
 \end{figure}
+
 \begin{figure}
 	\centering
-	\includegraphics[height=0.35\textheight]{fig06/Img12chp6.png}
+	\includegraphics[height=0.35\textheight]{fig06/img64.png}
 	\mycaption[Probability Distribution of Completion Costs (N = 10000)]{Probability Distribution of Completion Costs (N = 10000)}
 	\label{img12ch6}
 \end{figure}
  
- Monte-Carlo simulations make the uncertainty in forecasts explicit and can help to forecast in terms of probability and use it on a universal tool MS-Excel which is very handy and self-explanatory can be used by technical and non-technical individuals within an organization handling the project. It provides a  "new structure which supports the project control decisions to ensure that a project is completed on schedule when activity duration are uncertain and modeled by random variables. This structure consists of specifying a maximum limit as defined in section \ref{section5.3.1} for each activity duration. During the project, if the time to complete an activity is going to exceed its maximum limit, actions are taken to ensure cost containment within project budgeted cost. "\cite{BOWMAN20061191}.
+ Monte-Carlo simulations incorporates not just such unforeseen contingencies in its analysis but also makes the uncertainty in forecasts explicit and can help to forecast in terms of probability and use it on a universal tool MS-Excel which is very accessible and self-explanatory. It can be used by technical and non-technical individuals within an organization handling the project. It provides a "new structure which supports the project control decisions to ensure that a project is completed on schedule when activity duration are uncertain and modeled by random variables. This structure consists of specifying a maximum limit as defined in section \ref{section5.3.1} for each activity duration. During the project, if the time to complete an activity is going to exceed its maximum limit, actions are taken to ensure cost containment within project budgeted cost". \cite{BOWMAN20061191}.
  
 Monte Carlo simulation based models and tools explores alternative resource-allocation strategies for infrastructure projects that have uncertain activity duration and costs. It extends resource allocation beyond existing models which assume activities duration are deterministic. As it is a probabilistic model and account for uncertainty while forecasting activities duration. It supports efficient project planning and scheduling along with traditional project planning methodologies based on historical estimates. A combination of both will likely address project planning and scheduling risks like the Nano-Lab project, CERN and other complex projects in scientific environments.
  
